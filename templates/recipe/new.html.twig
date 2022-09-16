@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvelle recette - Recipes {% endblock %}
+
+{% block body %}
+{#    <div><img src="{{ asset('assets/img/market.jpg') }}" class="img-fluid" alt=""></div>#}
+    <div class="container form-page">
+        <div class="form-container w-75 mx-auto mt-5 bg-dark text-white">
+            <h1 class="mb-5">Ajouter une recette : </h1>
+            {{ form(form) }}
+        </div>
+    </div>
+{% endblock %}
