@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recette - Recipes {% endblock %}
+
+{% block body %}
+
+
+
+    <div class="container">
+
+        <h1 class="my-5">Mes Recettes</h1>
+        {% for message in app.flashes('success') %}
+            <div class="alert-success my-2 p-4">
+                {{ message }}
+            </div>
+        {% endfor %}
+
+
+        <a href="{{ path('recipe.new') }}" class="btn btn-outline-dark">Nouvelle recette</a>
+        {% if recipes.getTotalItemCount | length > 0 %}
+
+            <div class="count">
+                <small>Nombre d'ingrédients : {{ recipes.getTotalItemCount }}</small>
+            </div>
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">Numéro</th>
+                    <th scope="col">Plat</th>
+                    <th scope="col">Prix</th>
+                    <th scope="col">Difficulté</th>
+                    <th scope="col">Crée le</th>
+                    <th scope="col">Modifiée le</th>
+                    <th scope="col">Action</th>
+                </tr>
+                </thead>
+                {% for recipe in recipes %}
+                    <tbody>
+                    <tr class="table-light">
+                        <th scope="row">{{ recipe.id }} </th>
+                        <td>{{ recipe.name }} </td>
+                        <td>
+                            {% if recipe.price is null %}
+                                --- €
+                            {% else %}
+                                {{ recipe.price }} €
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if recipe.difficulty is null %}
+                                ---
+                            {% else %}
+                                {{ recipe.difficulty }} / 5
+                            {% endif %}
+                        </td>
+                        <td>{{ recipe.createdAt | date('d/m/Y') }} </td>
+                        <td>{{ recipe.updatedAt | date('d/m/Y') }} </td>
+                        <td>
+                            <a href="{{ path('recipe.edit',{ 'id' : recipe.id }) }}">Modifier</a> /
+                            <a href="{{ path('recipe.delete',{ 'id' : recipe.id }) }}">Supprimer</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                {% endfor %}
+            </table>
+            <div class="navigation">
+                {{ knp_pagination_render(recipes) }}
+            </div>
+
+        {% else %}
+            <h4>Il n'y a pas de recette enregistrées</h4>
+        {% endif %}
+
+
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+
+{% endblock %}
