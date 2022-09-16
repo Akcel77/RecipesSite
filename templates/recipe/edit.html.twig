@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editer Recette - Recipes {% endblock %}
+
+{% block body %}
+
+    <div class="container form-page">
+        <div class="form-container w-50 mx-auto mt-5 bg-dark text-white">
+            <h1 class="mb-5">Modifier une recette : </h1>
+            {{ form(form) }}
+        </div>
+    </div>
+
+{% endblock %}
