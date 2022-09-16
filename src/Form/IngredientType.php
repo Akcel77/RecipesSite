@@ -31,7 +31,7 @@ class IngredientType extends AbstractType
             ->add('submit', SubmitType::class, [
                 'label' => 'Ajouter',
                 'attr' => [
-                    'class' => 'btn btn-outline-dark btn-block',
+                    'class' => 'btn btn-outline-light',
                 ]
             ])
         ;
