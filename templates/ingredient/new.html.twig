@@ -3,16 +3,11 @@
 {% block title %}Nouvel Ingredient - Recipes {% endblock %}
 
 {% block body %}
-    <div><img src="{{ asset('assets/img/market.jpg') }}" class="img-fluid" alt=""></div>
-    <div class="container form-page" style="">
-
-
-
+{#    <div><img src="{{ asset('assets/img/market.jpg') }}" class="img-fluid" alt=""></div>#}
+    <div class="container form-page">
         <div class="form-container w-50 mx-auto mt-5 bg-dark text-white">
             <h1 class="mb-5">Ajouter un ingrédient : </h1>
             {{ form(form) }}
         </div>
-
     </div>
-
 {% endblock %}
