@@ -48,6 +48,11 @@ class IngredientController extends AbstractController
         ]);
     }
 
+    /**
+     * Function that create a new ingredient
+     * @param Request $request
+     * @return Response
+     */
     #[Route('/ingredient/nouveau', name: 'ingredient.new', methods: ['GET', 'POST'])]
     public function new(Request $request) : Response
     {
@@ -71,6 +76,12 @@ class IngredientController extends AbstractController
         ]);
     }
 
+    /**
+     * Function that edit an ingredient
+     * @param Request $request
+     * @param Ingredient $ingredient
+     * @return Response
+     */
     #[Route('/ingredient/edit/{id}', name: 'ingredient.edit', methods: ['GET', 'POST'])]
     public function edit(Request $request,Ingredient $ingredient) : Response
     {
@@ -93,6 +104,11 @@ class IngredientController extends AbstractController
         ]);
     }
 
+    /**
+     * Function that delete an ingredient
+     * @param Ingredient $ingredient
+     * @return Response
+     */
     #[Route('/ingredient/delete/{id}', name: 'ingredient.delete', methods: [ 'GET','POST'])]
     public function delete(Ingredient $ingredient) : Response
     {

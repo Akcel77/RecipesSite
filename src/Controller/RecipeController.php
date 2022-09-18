@@ -48,6 +48,7 @@ class RecipeController extends AbstractController
     }
 
     /**
+     * Function that create a new Recipe
      * @param Request $request
      * @return Response
      */
@@ -74,6 +75,12 @@ class RecipeController extends AbstractController
         ]);
     }
 
+    /**
+     * Function that edit a Recipe
+     * @param Request $request
+     * @param Recipe $recipe
+     * @return Response
+     */
     #[Route('/recette/edit/{id}', name: 'recipe.edit', methods: ['GET', 'POST'])]
     public function edit(Request $request,Recipe $recipe) : Response
     {
@@ -96,7 +103,11 @@ class RecipeController extends AbstractController
         ]);
     }
 
-
+    /**
+     * Function that delete a Recipe
+     * @param Recipe $recipe
+     * @return Response
+     */
     #[Route('/recette/delete/{id}', name: 'recipe.delete', methods: [ 'GET','POST'])]
     public function delete(Recipe $recipe) : Response
     {
