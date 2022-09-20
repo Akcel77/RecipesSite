@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#">Les P'tites Recettes</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -17,7 +17,14 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ path('ingredient') }}">Ingredients</a>
                 </li>
+
             </ul>
-        </div>
+            <div class="navbar-item-custom">
+                {% if app.user %}
+                    <a href="{{ path('account') }}" class="login-group">Mon compte <small>({{ app.user.fisrtname }})</small> </a> | <a href="{{ path('app_logout') }}" class="login-group">Deconnexion</a>
+                {% else %}
+                    <a href="{{ path('app_login') }}" class="login-group">Connexion</a> | <a href="{{ path('register') }}" class="login-group">Inscription</a>
+                {% endif %}
+            </div>
     </div>
 </nav>
