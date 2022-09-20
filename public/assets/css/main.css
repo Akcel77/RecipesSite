@@ -7,3 +7,20 @@
     background-size: cover;
     background-position: center
 }
+
+.inscription-block{
+    background-color: #049900;
+    width: 50%;
+    padding: 4rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem 0 rgba(0,0,0,.2);
+}
+
+@media screen and (max-width: 900px) {
+    .inscription-block{
+        padding: 1rem;
+        border-radius: 1rem;
+        box-shadow: 0 0 1rem 0 rgba(0,0,0,.2);
+        width: 95%;
+    }
+}
