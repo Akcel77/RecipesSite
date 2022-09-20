@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon compte - Les P'tites Recette{% endblock %}
+
+{% block body %}
+    <h1>Mon compte</h1>
+
+    <p>
+        C'est dans cet espace que vous allez pouvoir gerer toutes vos informations personnelles.
+        <hr>
+    </p>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="account-item text-center">
+                <a href="{{ path('account_password') }}">
+                    <img src="{{ asset('assets/img/padlock.png') }}" class="icon-account"  alt="Modifier mon mot de passe"><br>Modifier mon mot de passe
+                </a><br/>
+            </div>
+        </div>
+    </div>
+{% endblock %}
