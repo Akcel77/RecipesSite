@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription - Travel With Your Bike{% endblock %}
+
+{% block body %}
+    <div class="mx-auto mt-5 inscription-block text-white">
+        <h1>Inscription</h1>
+
+        {% if notification %}
+            <div class="alert alert-success">
+                {{ notification }}
+            </div>
+            <hr>
+        {% endif %}
+        {{ form(form) }}
+    </div>
+
+
+{% endblock %}
+
+{% block javascripts %}
+
+{% endblock %}
